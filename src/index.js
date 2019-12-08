@@ -45,12 +45,13 @@ class App extends React.Component {
   createScene() {
     let names = [];
     for (let name of name_info) {
+        let size = Math.log(parseInt(name.count)) / 250;
         names.push(<Entity 
             primitive="a-box" 
             position={name.x/scaleX + " " + name.y/scaleY + " " + name.z/scaleZ} 
-            height="0.1" 
-            width="0.1" 
-            depth="0.1" 
+            height={size}
+            width={size}
+            depth={size}
             color={this.perc2color(parseInt(name.idxmax), 1900, 2019)}
         />)
     }
