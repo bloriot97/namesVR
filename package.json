@@ -1,35 +1,44 @@
 {
-  "name": "test-aframe",
+  "name": "namesvr",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "deploy": "gh-pages -d build"
+    "build": "webpack",
+    "start": "webpack-dev-server --entry ./src/index.js --output-filename ./dist/bundle.js"
   },
-  "homepage": "https://bloriot97.github.io/namesVR/",
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bloriot97/namesVR.git"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "aframe": "^0.9.2",
-    "aframe-react": "^4.4.0",
-    "gh-pages": "^2.1.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "^3.3.0"
+  "bugs": {
+    "url": "https://github.com/bloriot97/namesVR/issues"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "homepage": "https://github.com/bloriot97/namesVR#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "babylonjs": "^4.1.0",
+    "babylonjs-gui": "^4.1.0",
+    "babylonjs-loaders": "^4.1.0",
+    "babylonjs-materials": "^4.1.0",
+    "babylonjs-procedural-textures": "^4.1.0",
+    "cannon": "^0.6.2",
+    "d3": "^5.15.1",
+    "d3-scale": "^3.2.1",
+    "jquery": "^3.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0",
+    "brotli-webpack-plugin": "^1.1.0",
+    "compression-webpack-plugin": "^3.1.0",
+    "webpack": "^4.42.1",
+    "webpack-bundle-analyzer": "^3.7.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
   }
 }
