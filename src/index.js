@@ -215,7 +215,7 @@ const genScene = (nameData) => {
 //     alert( "Request failed: " + textStatus );
 // });
 
-axios.get('/data_3D_sample.json')
+axios.get('data_3D_sample.json')
   .then(function (response) {
     genScene(response.data);
   })
