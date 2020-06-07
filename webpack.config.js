@@ -1,7 +1,9 @@
 const path = require("path")
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 var BrotliPlugin = require('brotli-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -40,6 +42,16 @@ module.exports = {
 		}
 	},
     plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Custom template',
+            // Load a custom template (lodash by default)
+            template: 'src/index.ejs'
+        }),
+        new CopyPlugin({
+            patterns: [
+              { from: 'public', to: 'public' },
+            ],
+        }),
         new CompressionPlugin(),
         new BrotliPlugin({
             asset: '[path].br[query]',
@@ -51,6 +63,8 @@ module.exports = {
     ],
     mode: "development",
     devServer: {
+        contentBase: path.join(__dirname, '/dist'),
+        compress: true,
         port: 9000
     }
 };
